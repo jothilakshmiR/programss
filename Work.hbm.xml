@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 27 Sep, 2018 12:31:56 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.program.Employeees.Work" table="WORK">
+
+      <id name="empId">
+      <generator class="foreign"></generator>
+      
+        <column name="EMPNO" length="5" not-null="true"></column>
+    </id>
+    
+    <property name="empName" >
+         <column name="EMPNAME" length="20" not-null="true"></column>
+     </property>
+    
+    <property name="empDept" >
+         <column name="EMPDEPT" length="20" not-null="true"></column>
+     </property>
+      
+     <one-to-one name="EmployeeService" class = "com.program.Employeees.Work"></one-to-one>
+    </class>
+</hibernate-mapping>
