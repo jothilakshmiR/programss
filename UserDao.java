@@ -16,7 +16,7 @@ public static Connection getConnection() {
 	return con;
 }
 public static int save(User u) {
-	int status=1;
+	int status=0;
 	try {
 		Connection con=getConnection();
 		PreparedStatement ps=con.prepareStatement("	insert into tableuser(Name,Age,Address,Contact_Number,Fathers_Name,Occupation,Tamil,English,Maths,Science,Social,Marks_Scored_in_HSC,Academic_Qualifications,Economical_Status,Social_Status,Previous_Government_or_Private_Exams_Appeared,Marks_Scored_in_the_Exams_Appeared,Areas_of_Interest,Previous_Working_Experience,Last_Salary_Drawn,Are_you_a_Physically_Challenged_Person, Are_you_a_Widow_or_Divorced_Person,Are_you_an_Ex_servicemen,Have_you_registered_your_Qualifications_in_Employment_Office)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
@@ -48,6 +48,7 @@ public static int save(User u) {
 
 
 status=ps.executeUpdate();
+
 con.close();
 	}
 	catch(Exception e) {
@@ -55,6 +56,18 @@ con.close();
 	}
 	return status;
 }
-
-//isAutheticate(User u)
 }
+/*public static boolean isAutheticate(User u) {
+	boolean isValid=false;
+	try {
+		Connection con =getConnection();
+	}
+		catch(Exception e) {
+			System.out.print(e);
+		}
+	return isValid;
+	}
+}
+//isAutheticate(User u)
+ 
+*/
